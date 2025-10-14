@@ -128,6 +128,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="arquero.h" />
+    <ClInclude Include="AwesomeLibrary.h" />
     <ClInclude Include="ballestero.h" />
     <ClInclude Include="espadachin.h" />
     <ClInclude Include="gameLogic.h" />
@@ -136,7 +137,11 @@
     <ClInclude Include="soldadoMelee.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="AwesomeLibrary.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="soldado.cpp" />
+    <ClCompile Include="soldadoMelee.cpp" />
+    <ClCompile Include="soldadoRange.cpp" />
     <ClCompile Include="soldadoRange.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
