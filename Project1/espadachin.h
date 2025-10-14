@@ -6,14 +6,13 @@ class Espadachin : public SoldadoMelee
 {
 protected:
 
-
 public:
-	Espadachin();
+	Espadachin(float maxHP, float maxStamina, float damage, bool isAlive, int posInArray, int attackRadius, int maxEnemiesInAttack);
 	~Espadachin();
 
 	void rest();
 
 	float getStamina();
 	float getHP();
-	float Attack(float enemyHP) override;
+	float Attack(Soldado* attackedSoldier[]) = 0;
 };

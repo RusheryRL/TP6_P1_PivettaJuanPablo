@@ -138,6 +138,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AwesomeLibrary.cpp" />
+    <ClCompile Include="espadachin.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="soldado.cpp" />
     <ClCompile Include="soldadoMelee.cpp" />

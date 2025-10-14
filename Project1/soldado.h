@@ -25,5 +25,5 @@ public:
 
 	float getStamina();
 	float getHP();
-	virtual float Attack(float enemyHP) = 0;
+	virtual float Attack(Soldado* attackedSoldier[]) = 0;
 };

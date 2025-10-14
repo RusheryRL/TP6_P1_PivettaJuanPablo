@@ -15,5 +15,5 @@ public:
 
 	float getStamina();
 	float getHP();
-	float Attack(float enemyHP) override;
+	float Attack(Soldado* attackedSoldier[]) = 0;
 };

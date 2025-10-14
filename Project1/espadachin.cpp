@@ -1,10 +1,10 @@
-#include "soldadoMelee.h"
+#include "espadachin.h"
 
 #include <iostream>
 
 using namespace std;
 
-SoldadoMelee::SoldadoMelee(float maxHP, float maxStamina, float damage, bool isAlive, int posInArray, int attackRadius) : Soldado(maxHP, maxStamina, damage, isAlive, posInArray)
+Espadachin::Espadachin(float maxHP, float maxStamina, float damage, bool isAlive, int posInArray, int attackRadius, int maxEnemiesInAttack) : SoldadoMelee(maxHP, maxStamina, damage, isAlive, posInArray, attackRadius)
 {
 	this->maxHP = maxHP;
 	this->currentHP = maxHP;
@@ -14,24 +14,25 @@ SoldadoMelee::SoldadoMelee(float maxHP, float maxStamina, float damage, bool isA
 	this->isAlive = isAlive;
 	this->posInArray = posInArray;
 	this->attackRadius = attackRadius;
+	this->maxEnemiesInAttack = maxEnemiesInAttack;
 }
 
-SoldadoMelee::~SoldadoMelee()
+Espadachin::~Espadachin()
 {
-	cout << "Soldado Melee Destruido" << endl;
+	cout << "Espadachin Destruido" << endl;
 }
 
-void SoldadoMelee::rest()
+void Espadachin::rest()
 {
 	currentHP = maxHP;
 }
 
-float SoldadoMelee::getStamina()
+float Espadachin::getStamina()
 {
 	return currentStamina;
 }
 
-float SoldadoMelee::getHP()
+float Espadachin::getHP()
 {
 	return currentHP;
 }
