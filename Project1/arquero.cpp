@@ -1,10 +1,10 @@
-#include "espadachin.h"
+#include "arquero.h"
 
 #include <iostream>
 
 using namespace std;
 
-Espadachin::Espadachin(float maxHP, float maxStamina, float damage, bool isAlive, int posInArray, int attackRadius) : SoldadoMelee(maxHP, maxStamina, damage, isAlive, posInArray, attackRadius)
+Arquero::Arquero(float maxHP, float maxStamina, float damage, bool isAlive, int posInArray, int minAttackRange, int maxAttackRange, int hitChance) : SoldadoRange(maxHP, maxStamina, damage, isAlive, posInArray, minAttackRange, maxAttackRange)
 {
 	this->maxHP = maxHP;
 	this->currentHP = maxHP;
@@ -13,20 +13,21 @@ Espadachin::Espadachin(float maxHP, float maxStamina, float damage, bool isAlive
 	this->damage = damage;
 	this->isAlive = isAlive;
 	this->posInArray = posInArray;
-	this->attackRadius = attackRadius;
+	this->minAttackRange = minAttackRange;
+	this->maxAttackRange = maxAttackRange;
 }
 
-Espadachin::~Espadachin()
+Arquero::~Arquero()
 {
-	cout << "Espadachin Destruido" << endl;
+
 }
 
-void Espadachin::rest()
+void Arquero::rest()
 {
 	currentStamina = maxStamina;
 }
 
-void Espadachin::reciveDamage(float damageRecived)
+void Arquero::reciveDamage(float damageRecived)
 {
 	currentHP -= damageRecived;
 
@@ -36,26 +37,28 @@ void Espadachin::reciveDamage(float damageRecived)
 	}
 }
 
-float Espadachin::getStamina()
+float Arquero::getStamina()
 {
 	return currentStamina;
 }
 
-float Espadachin::getHP()
+float Arquero::getHP()
 {
 	return currentHP;
 }
 
-void Espadachin::Attack(Soldado* attackedSoldier[], int index)
+void Arquero::Attack(Soldado* attackedSoldier[], int index)
 {
 	float enemyHP = attackedSoldier[index]->getHP();
 
 	if (enemyHP <= 0) //temp hasta hacer el ataque bien
 	{
 		cout << "el enemigo esta muerto" << endl;
+
 		return;
 	}
-	else if (posInArray + attackRadius == index || posInArray - attackRadius == index)
+
+	if (index <= maxAttackRange && index >= minAttackRange)
 	{
 		attackedSoldier[index]->reciveDamage(damage);
 	}

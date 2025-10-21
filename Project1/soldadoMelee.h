@@ -12,8 +12,9 @@ public:
 	~SoldadoMelee();
 
 	void rest() override;
+	void reciveDamage(float damageRecived);
+	virtual void Attack(Soldado* attackedSoldier[], int index) = 0;
 
 	float getStamina();
 	float getHP();
-	float Attack(Soldado* attackedSoldier[]) = 0;
 };

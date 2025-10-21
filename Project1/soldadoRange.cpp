@@ -27,6 +27,16 @@ void SoldadoRange::rest()
 	currentHP = maxHP;
 }
 
+void SoldadoRange::reciveDamage(float damageRecived)
+{
+	currentHP -= damageRecived;
+
+	if (currentHP <= 0.0f)
+	{
+		currentHP = 0.0f;
+	}
+}
+
 float SoldadoRange::getStamina()
 {
 	return currentStamina;
@@ -37,15 +47,3 @@ float SoldadoRange::getHP()
 	return currentHP;
 }
 
-float SoldadoRange::Attack(float enemyHP)
-{
-	if (currentStamina < MIN_STAMINA_PER_ATTACK)
-	{
-		cout << "No tiene estamina! necesita descansar, Pierde el turno" << endl;
-		rest();
-	}
-	else
-	{
-
-	}
-}

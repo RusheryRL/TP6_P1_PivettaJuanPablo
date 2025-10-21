@@ -29,3 +29,13 @@ float Soldado::getHP()
 {
 	return currentHP;
 }
+
+void Soldado::reciveDamage(float damageRecived)
+{
+	currentHP -= damageRecived;
+
+	if (currentHP <= 0.0f)
+	{
+		currentHP = 0.0f;
+	}
+}

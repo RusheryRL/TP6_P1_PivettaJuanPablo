@@ -26,6 +26,16 @@ void SoldadoMelee::rest()
 	currentHP = maxHP;
 }
 
+void SoldadoMelee::reciveDamage(float damageRecived)
+{
+	currentHP -= damageRecived;
+
+	if (currentHP <= 0.0f)
+	{
+		currentHP = 0.0f;
+	}
+}
+
 float SoldadoMelee::getStamina()
 {
 	return currentStamina;
@@ -34,21 +44,4 @@ float SoldadoMelee::getStamina()
 float SoldadoMelee::getHP()
 {
 	return currentHP;
-}
-
-float SoldadoMelee::Attack(Soldado* attackedSoldier[])
-{
-	if (currentStamina < MIN_STAMINA_PER_ATTACK)
-	{
-		cout << "No tiene estamina! necesita descansar, Pierde el turno" << endl;
-		rest();
-	}
-	else
-	{
-		currentStamina -= MIN_STAMINA_PER_ATTACK;
-
-		enemyHP -= damage;
-	}
-
-	return enemyHP;
 }

@@ -137,8 +137,11 @@
     <ClInclude Include="soldadoMelee.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="arquero.cpp" />
     <ClCompile Include="AwesomeLibrary.cpp" />
+    <ClCompile Include="ballestero.cpp" />
     <ClCompile Include="espadachin.cpp" />
+    <ClCompile Include="lancero.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="soldado.cpp" />
     <ClCompile Include="soldadoMelee.cpp" />

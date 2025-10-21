@@ -22,8 +22,10 @@ public:
 	virtual ~Soldado();
 
 	virtual void rest() = 0;
+	virtual void Attack(Soldado* attackedSoldier[], int index) = 0;
+	virtual void reciveDamage(float damageRecived);
 
 	float getStamina();
 	float getHP();
-	virtual float Attack(Soldado* attackedSoldier[]) = 0;
+
 };
